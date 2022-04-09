@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.container .left {
+  float: left;
+  width: 30%;
+}
+.container .right {
+  float: right;
+  width: 70%;
+}
+.container .clear {
+  clear: both;
+}
+
+/*# sourceMappingURL=style.css.map */
