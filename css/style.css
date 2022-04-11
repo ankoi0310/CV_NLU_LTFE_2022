@@ -1,18 +1,323 @@
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+}
+
 .container {
+  overflow: hidden;
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
 }
-.container .left {
+
+.left {
   float: left;
   width: 30%;
+  background-color: #101f31;
+  clear: left;
 }
-.container .right {
+.left a {
+  color: #fff;
+}
+.left .content {
+  font-size: 0.8em;
+  line-height: 1;
+  color: #ffffff;
+}
+.left .topic {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px 0 16px;
+}
+.left .topic .title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #dbdbde;
+  flex-grow: 0;
+}
+.left .topic .divider {
+  flex-grow: 1;
+  height: 3px;
+  margin-left: 10px;
+  background-color: #dbdbde;
+}
+.left .topic .inner {
+  clip-path: polygon(6% 27%, 50% 5%, 95% 27%, 95% 73%, 50% 95%, 6% 73%);
+}
+.left .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.left .info .avatar {
+  width: 50%;
+  height: 50%;
+  position: relative;
+  margin-top: 30px;
+  background-color: #fff;
+  clip-path: polygon(0% 25%, 50% 0%, 100% 25%, 100% 72%, 50% 97%, 0% 72%);
+}
+.left .info .avatar img {
+  clip-path: polygon(1% 27%, 50% 1%, 99% 27%, 99% 75%, 50% 100%, 1% 75%);
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.left .info .fullname, .left .info .position {
+  color: #ffffff;
+}
+.left .info .fullname {
+  font-size: 1.5em;
+}
+.left .info .position {
+  font-size: 1.2em;
+}
+.left .connect {
+  padding-bottom: 20px;
+}
+.left .profile .content {
+  padding: 0 10px 0 40px;
+}
+.left .profile .content p {
+  margin: 5px 0;
+  line-height: 1.1;
+}
+.left * ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.left * ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.left * ul li .hexagon {
+  display: inline-block;
+}
+.left * ul li .hexagon .white-border {
+  display: inline-block;
+  width: 1.7em;
+  height: 1.7em;
+}
+.left * ul li .hexagon .white-border i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.6em;
+  color: #101f31;
+}
+.left * table {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 45px;
+}
+.left * table tr {
+  width: 100%;
+  height: 100%;
+}
+.left * table tr td.list-item {
+  padding: 0;
+  display: list-item;
+  font-size: 0.8em;
+  color: #fff;
+}
+.left * table tr td.progress-bar {
+  width: 50%;
+  padding-right: 20px;
+}
+.left * table tr td.progress-bar .border {
+  height: 0.5em;
+  border: 1px solid #fff;
+  border-radius: 15px;
+}
+.left * table tr td.progress-bar .border .progress {
+  position: relative;
+  height: calc(100% + 2px);
+  top: -1px;
+  left: -1px;
+  width: calc(var(--progress-percent) + 2px);
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.right {
   float: right;
   width: 70%;
+  height: 100%;
+  background-color: #dbdbde;
+  padding-top: 15px;
+  padding-bottom: 500em;
+  margin-bottom: -500em;
 }
-.container .clear {
+.right .topic {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px 0 16px;
+  margin: 10px 0 16px;
+}
+.right .topic .title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #101f31;
+  flex-grow: 0;
+}
+.right .topic .divider {
+  flex-grow: 1;
+  height: 3px;
+  margin-left: 10px;
+  background-color: #101f31;
+}
+.right .topic .inner {
+  clip-path: polygon(5% 27%, 50% 5%, 94% 27%, 94% 73%, 50% 95%, 5% 73%);
+}
+.right .work-experience .link ul {
+  list-style-type: none;
+  margin: 0 0 10px;
+}
+.right .work-experience .link ul li:before {
+  content: "-";
+  margin-left: -20px;
+  margin-right: 10px;
+}
+.right .work-experience .link ul li a {
+  font-weight: normal;
+  color: #101f31;
+}
+.right * table {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 45px;
+  table-layout: fixed;
+}
+.right * table tr .list-item {
+  padding: 0;
+  display: list-item;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+.right * table tr .list-item .title {
+  font-size: 1em;
+  font-weight: normal;
+}
+.right * table tr .list-item .title strong {
+  font-weight: bold;
+}
+.right * table tr .list-item .project-info, .right * table tr .list-item .time, .right * table tr .list-item .link, .right * table tr .list-item .place, .right * table tr .list-item .content {
+  margin: 0;
+  font-size: 1em;
+  font-weight: normal;
+}
+.right * table tr .list-item .project-name, .right * table tr .list-item .time, .right * table tr .list-item .link, .right * table tr .list-item .place {
+  font-weight: 500;
+}
+.right * table tr .list-item .project-info {
+  padding-right: 40px;
+}
+.right * table tr .list-item .place span {
+  font-weight: normal;
+}
+.right * table tr .list-item .content {
+  margin-bottom: 10px;
+}
+.right * table tr td.progress-bar {
+  padding-right: 50px;
+}
+.right * table tr td.progress-bar .border {
+  height: 0.5em;
+  border: 1px solid #101f31;
+  border-radius: 15px;
+}
+.right * table tr td.progress-bar .border .progress {
+  position: relative;
+  height: calc(100% + 2px);
+  top: -1px;
+  left: -1px;
+  width: calc(var(--progress-percent) + 2px);
+  background-color: #101f31;
+  border-radius: 15px;
+}
+
+.left:after, .right:after {
   clear: both;
+}
+
+.hexagon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px 0 20px;
+}
+.hexagon .white-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  clip-path: polygon(0% 25%, 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%);
+}
+.hexagon .white-border .inner {
+  height: 100%;
+  background-color: #101f31;
+}
+.hexagon .white-border .inner i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.6em;
+  color: #fff;
+}
+.hexagon .black-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #101f31;
+  clip-path: polygon(0% 25%, 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%);
+}
+.hexagon .black-border .inner {
+  height: 100%;
+  background-color: #dbdbde;
+}
+.hexagon .black-border .inner i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.6em;
+  color: #101f31;
+}
+
+.text-primary {
+  color: #101f31;
+}
+
+.text-secondary {
+  color: #dbdbde;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
